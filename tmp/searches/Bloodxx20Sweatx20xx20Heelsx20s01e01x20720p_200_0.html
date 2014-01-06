@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="google-site-verification" content="bERYeomIC5eBWlPLupPPYPYGA9GvAUKzFHh3WIw24Xs" />
+	<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Search The Pirate Bay" />
+	<link rel="stylesheet" type="text/css" href="/static/css-new/pirate6.css"/>
+	<style type="text/css">
+		.searchBox{
+			margin: 6px;
+			width: 300px;
+			vertical-align: middle;
+			padding: 2px;
+		        background-image:url('/static/img/icon-https.gif');
+        		background-repeat:no-repeat;
+		        background-position: right;
+		}
+
+		.detLink {
+			font-size: 1.2em;
+			font-weight: 400;
+		}
+		.detDesc {
+			color: #4e5456;
+		}
+		.detDesc a:hover {
+			color: #000099;
+			text-decoration: underline;
+		}
+		.sortby {
+			text-align: left;
+			float: left;
+		}
+		.detName {
+			padding-top: 3px;
+			padding-bottom: 2px;
+		}
+		.viewswitch {
+			font-style: normal;
+			float: right;
+			text-align: right;
+			font-weight: normal;
+		}
+	</style>
+	<script src="/static/js/tpb.js" type="text/javascript"></script>
+
+        <style type="text/css">
+		table#sponsoredLinks a { border: 0; }
+		table#sponsoredLinks a:hover { text-decoration: underline; }
+                table#sponsoredLinks td.downbut a {border: none;}
+                table#sponsoredLinks {min-width: 400px; text-align: left; width: 100%; margin: 0 0 10px 0; border-left: solid 1px #ffffff;}
+                table#sponsoredLinks th {padding: 7px; background-color: #D2B9A6;}
+		table#sponsoredLinks td {padding: 2px 4px; background-color: #F6F1EE; font-weight: bold; font-style: italic; text-align: right; white-space: nowrap;}
+                table#sponsoredLinks td img {border: 0;}
+                table#sponsoredLinks td.first {font-style: normal; text-align: left;}
+                table#sponsoredLinks td.first img {margin: 0 5px 0 0; vertical-align: -7px;}
+                table#sponsoredLinks tr:hover td {background-color: #FFFFFF;}
+                table#sponsoredLinks td.downbut {width: 170px;}
+        </style>
+
+	<script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>
+</head>
+
+<body>
+
+	<div id="header">
+
+
+		<div class="ad">
+		 <iframe src="http://cdn1.adexprt.com/exo_na/top.html" width="468" height="60" frameborder="0" scrolling="no"></iframe>
+		</div>
+			<form method="get" id="q" action="/s/">
+			<a href="/" class="img"><img src="/static/img/tpblogo_sm_ny.gif" id="TPBlogo" alt="The Pirate Bay" /></a>
+			<b><a href="/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+			<a href="/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="/tv" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+			<a href="/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+			<a href="/top" title="Top 100">Top 100</a>
+			<br /><input type="search" class="inputbox" title="Pirate Search" name="q" placeholder="Search here..." value="Blood, Sweat" /><input value="Pirate Search" type="submit" class="submitbutton" /><br />			<label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox"/>Audio</label>
+			<label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox" checked="checked"/>Video</label>
+			<label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();" type="checkbox"/>Applications</label>
+			<label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox"/>Games</label>
+			<label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox"/>Other</label>
+
+			<select id="category" name="category" onchange="javascript:setAll();">
+        	        	<option value="0">All</option>
+				<optgroup label="Audio">
+					<option value="101">Music</option>
+					<option value="102">Audio books</option>
+					<option value="103">Sound clips</option>
+					<option value="104">FLAC</option>
+					<option value="199">Other</option>
+				</optgroup>
+				<optgroup label="Video">
+					<option value="201">Movies</option>
+					<option value="202">Movies DVDR</option>
+					<option value="203">Music videos</option>
+					<option value="204">Movie clips</option>
+					<option value="205">TV shows</option>
+					<option value="206">Handheld</option>
+					<option value="207">HD - Movies</option>
+					<option value="208">HD - TV shows</option>
+					<option value="209">3D</option>
+					<option value="299">Other</option>
+				</optgroup>
+				<optgroup label="Applications">
+					<option value="301">Windows</option>
+					<option value="302">Mac</option>
+					<option value="303">UNIX</option>
+					<option value="304">Handheld</option>
+					<option value="305">IOS (iPad/iPhone)</option>
+					<option value="306">Android</option>
+					<option value="399">Other OS</option>
+				</optgroup>
+				<optgroup label="Games">
+					<option value="401">PC</option>
+					<option value="402">Mac</option>
+					<option value="403">PSx</option>
+					<option value="404">XBOX360</option>
+					<option value="405">Wii</option>
+					<option value="406">Handheld</option>
+					<option value="407">IOS (iPad/iPhone)</option>
+					<option value="408">Android</option>
+					<option value="499">Other</option>
+				</optgroup>
+				<optgroup label="Other">
+					<option value="601">E-books</option>
+					<option value="602">Comics</option>
+					<option value="603">Pictures</option>
+					<option value="604">Covers</option>
+					<option value="605">Physibles</option>
+					<option value="699">Other</option>
+				</optgroup>
+			</select>
+
+			<input type="hidden" name="page" value="0" />
+			<input type="hidden" name="orderby" value="99" />
+		</form>
+	</div><!-- // div:header -->
+
+	<h2><span>Search results: Blood, Sweat</span>&nbsp;Displaying hits from 1 to 30 (approx 30 found)</h2>
+<div id="SearchResults"><div id="content">
+			<div id="sky-right">
+				 <iframe src="http://cdn1.adexprt.com/exo_na/sky2.html" width="160" height="600" frameborder="0" scrolling="no" style="padding-top: 100px"></iframe>
+			</div>
+	<div id="main-content">
+
+		 <iframe src="http://cdn2.adexprt.com/exo_na/center.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+	<table id="searchResult">
+	<thead id="tableHead">
+		<tr class="header">
+			<th><a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/13/200" title="Order by Type">Type</a></th>
+			<th><div class="sortby"><a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/1/200" title="Order by Name">Name</a> (Order by: <a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/3/200" title="Order by Uploaded">Uploaded</a>, <a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/5/200" title="Order by Size">Size</a>, <span style="white-space: nowrap;"><a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/11/200" title="Order by ULed by">ULed by</a></span>, <a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/8/200" title="Order by Seeders">SE</a>, <a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/9/200" title="Order by Leechers">LE</a>)</div><div class="viewswitch"> View: <a href="/switchview.php?view=s">Single</a> / Double&nbsp;</div></th>
+			<th><abbr title="Seeders"><a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/8/200" title="Order by Seeders">SE</a></abbr></th>
+			<th><abbr title="Leechers"><a href="/search/Blood,%20Sweat%20&%20Heels%20s01e01%20720p/0/9/200" title="Order by Leechers">LE</a></abbr></th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/6113542/Crusty_Demons_15_Blood_Sweat___Fears_2010_DVDRip_Xvid" class="detLink" title="Details for Crusty Demons 15 Blood Sweat & Fears 2010 DVDRip Xvid">Crusty Demons 15 Blood Sweat & Fears 2010 DVDRip Xvid</a>
+</div>
+<a href="magnet:?xt=urn:btih:cf11d4b37fe258652fe942a16aafa68d06279e98&dn=Crusty+Demons+15+Blood+Sweat+%26+Fears+2010+DVDRip+Xvid&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 01-19&nbsp;2011, Size 717.28&nbsp;MiB, ULed by <a class="detDesc" href="/user/Dj_Hardstyle/" title="Browse Dj_Hardstyle">Dj_Hardstyle</a></font>
+		</td>
+		<td align="right">10</td>
+		<td align="right">2</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8898570/BBC_Blood_Sweat_and_T_Shirts_1of4_PDTV_x264_AAC_" class="detLink" title="Details for BBC Blood Sweat and T Shirts 1of4 PDTV x264 AAC ">BBC Blood Sweat and T Shirts 1of4 PDTV x264 AAC </a>
+</div>
+<a href="magnet:?xt=urn:btih:b9a19272802e660cb2659def3962481f6e7f25e7&dn=BBC+Blood+Sweat+and+T+Shirts+1of4+PDTV+x264+AAC+&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8898570/BBC_Blood_Sweat_and_T_Shirts_1of4_PDTV_x264_AAC_.8898570.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/MVGroup"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 09-09&nbsp;2013, Size 670.17&nbsp;MiB, ULed by <a class="detDesc" href="/user/MVGroup/" title="Browse MVGroup">MVGroup</a></font>
+		</td>
+		<td align="right">7</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8902650/BBC_Blood_Sweat_and_T_Shirts_3of4_PDTV_x264_AAC_" class="detLink" title="Details for BBC Blood Sweat and T Shirts 3of4 PDTV x264 AAC ">BBC Blood Sweat and T Shirts 3of4 PDTV x264 AAC </a>
+</div>
+<a href="magnet:?xt=urn:btih:2abdb51b8b9dfe6ef41e364ae92185fe6ebf6c29&dn=BBC+Blood+Sweat+and+T+Shirts+3of4+PDTV+x264+AAC+&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8902650/BBC_Blood_Sweat_and_T_Shirts_3of4_PDTV_x264_AAC_.8902650.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><a href="/user/MVGroup"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 09-10&nbsp;2013, Size 666.53&nbsp;MiB, ULed by <a class="detDesc" href="/user/MVGroup/" title="Browse MVGroup">MVGroup</a></font>
+		</td>
+		<td align="right">4</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8225854/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.HDTV.XviD-AFG" class="detLink" title="Details for Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.HDTV.XviD-AFG">Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.HDTV.XviD-AFG</a>
+</div>
+<a href="magnet:?xt=urn:btih:4651c70b4d8d4dc2523ac3b305ed87bbdd3d8b5b&dn=Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.HDTV.XviD-AFG&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8225854/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.HDTV.XviD-AFG.8225854.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 03-06&nbsp;2013, Size 432.93&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">4</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8901183/BBC_Blood_Sweat_and_T_Shirts_2of4_PDTV_x264_AAC_" class="detLink" title="Details for BBC Blood Sweat and T Shirts 2of4 PDTV x264 AAC ">BBC Blood Sweat and T Shirts 2of4 PDTV x264 AAC </a>
+</div>
+<a href="magnet:?xt=urn:btih:c92443bb0d63cce7bcb8b66be5c599889d2a2c7d&dn=BBC+Blood+Sweat+and+T+Shirts+2of4+PDTV+x264+AAC+&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8901183/BBC_Blood_Sweat_and_T_Shirts_2of4_PDTV_x264_AAC_.8901183.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/MVGroup"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 09-10&nbsp;2013, Size 667.32&nbsp;MiB, ULed by <a class="detDesc" href="/user/MVGroup/" title="Browse MVGroup">MVGroup</a></font>
+		</td>
+		<td align="right">4</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/7238015/American.Digger.S01E07.hdtv.xvid-wrcr][_Blood__Sweat__and_Money_" class="detLink" title="Details for American.Digger.S01E07.hdtv.xvid-wrcr][ Blood, Sweat, and Money ">American.Digger.S01E07.hdtv.xvid-wrcr][ Blood, Sweat, and Money </a>
+</div>
+<a href="magnet:?xt=urn:btih:cca6082a5297ccc449e996fbb611d9048104685e&dn=American.Digger.S01E07.hdtv.xvid-wrcr%5D%5B+Blood%2C+Sweat%2C+and+Money+&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/7238015/American.Digger.S01E07.hdtv.xvid-wrcr][_Blood__Sweat__and_Money_.7238015.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><a href="/user/psspss"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 05-03&nbsp;2012, Size 174.64&nbsp;MiB, ULed by <a class="detDesc" href="/user/psspss/" title="Browse psspss">psspss</a></font>
+		</td>
+		<td align="right">4</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8752731/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear" class="detLink" title="Details for Life.Below.Zero.S01E05.Blood.Sweat.and.Fear">Life.Below.Zero.S01E05.Blood.Sweat.and.Fear</a>
+</div>
+<a href="magnet:?xt=urn:btih:ad59b240961e5a11f27e746e82398a7e8301985b&dn=Life.Below.Zero.S01E05.Blood.Sweat.and.Fear&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8752731/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.8752731.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/verovenlo"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 07-29&nbsp;2013, Size 148.38&nbsp;MiB, ULed by <a class="detDesc" href="/user/verovenlo/" title="Browse verovenlo">verovenlo</a></font>
+		</td>
+		<td align="right">3</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5654438/Blood__Sweat__Takeaways__Tshirts__and_Luxuries_-_ALL_Three" class="detLink" title="Details for Blood, Sweat, Takeaways, Tshirts, and Luxuries - ALL Three">Blood, Sweat, Takeaways, Tshirts, and Luxuries - ALL Three</a>
+</div>
+<a href="magnet:?xt=urn:btih:6c20543a6dc6af2bb9e5b6847f861140c73f9228&dn=Blood%2C+Sweat%2C+Takeaways%2C+Tshirts%2C+and+Luxuries+-+ALL+Three&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5654438/Blood__Sweat__Takeaways__Tshirts__and_Luxuries_-_ALL_Three.5654438.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><img src="/static/img/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image" /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 06-28&nbsp;2010, Size 4.3&nbsp;GiB, ULed by <a class="detDesc" href="/user/lifeson98/" title="Browse lifeson98">lifeson98</a></font>
+		</td>
+		<td align="right">3</td>
+		<td align="right">2</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8586099/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.HDTV.XviD-AFG" class="detLink" title="Details for Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.HDTV.XviD-AFG">Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.HDTV.XviD-AFG</a>
+</div>
+<a href="magnet:?xt=urn:btih:5113c3774612836e2d5d63599b2df8a3e91a4336&dn=Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.HDTV.XviD-AFG&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8586099/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.HDTV.XviD-AFG.8586099.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 06-18&nbsp;2013, Size 453.59&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">2</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8224636/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.720p.HDTV.x264-" class="detLink" title="Details for Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.720p.HDTV.x264-">Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.720p.HDTV.x264-</a>
+</div>
+<a href="magnet:?xt=urn:btih:b3a4ff38fa1b536a0857f3717fff4d3a07c33c4d&dn=Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.720p.HDTV.x264-&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8224636/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.720p.HDTV.x264-.8224636.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 03-06&nbsp;2013, Size 1.41&nbsp;GiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">2</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8905366/BBC_Blood_Sweat_and_T_Shirts_4of4_PDTV_x264_AAC_" class="detLink" title="Details for BBC Blood Sweat and T Shirts 4of4 PDTV x264 AAC ">BBC Blood Sweat and T Shirts 4of4 PDTV x264 AAC </a>
+</div>
+<a href="magnet:?xt=urn:btih:cb8ca1cdba5a064388921e8e9b80836167f8b1da&dn=BBC+Blood+Sweat+and+T+Shirts+4of4+PDTV+x264+AAC+&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8905366/BBC_Blood_Sweat_and_T_Shirts_4of4_PDTV_x264_AAC_.8905366.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/MVGroup"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 09-11&nbsp;2013, Size 665.23&nbsp;MiB, ULed by <a class="detDesc" href="/user/MVGroup/" title="Browse MVGroup">MVGroup</a></font>
+		</td>
+		<td align="right">2</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5553878/Blood.Sweat.And.Luxuries.S01E04.WS.PDTV.XviD-FTP" class="detLink" title="Details for Blood.Sweat.And.Luxuries.S01E04.WS.PDTV.XviD-FTP">Blood.Sweat.And.Luxuries.S01E04.WS.PDTV.XviD-FTP</a>
+</div>
+<a href="magnet:?xt=urn:btih:e4237ffaff8ab1eea568e62f10c5f03ac4487e60&dn=Blood.Sweat.And.Luxuries.S01E04.WS.PDTV.XviD-FTP&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5553878/Blood.Sweat.And.Luxuries.S01E04.WS.PDTV.XviD-FTP.5553878.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 05-12&nbsp;2010, Size 549.52&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/203" title="More from this category">Music videos</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8108743/Blood__Sweat__amp__Tears_-_Stockholm_1973" class="detLink" title="Details for Blood, Sweat &amp; Tears - Stockholm 1973">Blood, Sweat &amp; Tears - Stockholm 1973</a>
+</div>
+<a href="magnet:?xt=urn:btih:06d1e37319a5d037e8057888eb086f4709001396&dn=Blood%2C+Sweat+%26amp%3B+Tears+-+Stockholm+1973&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8108743/Blood__Sweat__amp__Tears_-_Stockholm_1973.8108743.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/11x11p.png" /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 02-06&nbsp;2013, Size 1.73&nbsp;GiB, ULed by <a class="detDesc" href="/user/winiwini/" title="Browse winiwini">winiwini</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">2</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5505998/Blood.Sweat.And.Luxuries.S01E01.WS.PDTV.XviD-FTP" class="detLink" title="Details for Blood.Sweat.And.Luxuries.S01E01.WS.PDTV.XviD-FTP">Blood.Sweat.And.Luxuries.S01E01.WS.PDTV.XviD-FTP</a>
+</div>
+<a href="magnet:?xt=urn:btih:24a9c8d42553e7e8a11bdbc72868a7e3c8609d05&dn=Blood.Sweat.And.Luxuries.S01E01.WS.PDTV.XviD-FTP&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5505998/Blood.Sweat.And.Luxuries.S01E01.WS.PDTV.XviD-FTP.5505998.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 04-21&nbsp;2010, Size 549.42&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5570341/Blood.Sweat.And.Luxuries.S01E05.WS.PDTV.XviD-FTP" class="detLink" title="Details for Blood.Sweat.And.Luxuries.S01E05.WS.PDTV.XviD-FTP">Blood.Sweat.And.Luxuries.S01E05.WS.PDTV.XviD-FTP</a>
+</div>
+<a href="magnet:?xt=urn:btih:33008cffee420631fabc5bb2d75a2284c285656f&dn=Blood.Sweat.And.Luxuries.S01E05.WS.PDTV.XviD-FTP&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5570341/Blood.Sweat.And.Luxuries.S01E05.WS.PDTV.XviD-FTP.5570341.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 05-19&nbsp;2010, Size 549.52&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8589920/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.480p.HDTV.x264-mSD" class="detLink" title="Details for Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.480p.HDTV.x264-mSD">Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.480p.HDTV.x264-mSD</a>
+</div>
+<a href="magnet:?xt=urn:btih:69b7fdff72c57b33a1ed9e846fea5aae3fc67c1a&dn=Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.480p.HDTV.x264-mSD&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8589920/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.480p.HDTV.x264-mSD.8589920.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments." /><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 06-19&nbsp;2013, Size 352.22&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5534339/Blood.Sweat.And.Luxuries.S01E03.WS.PDTV.XviD-BARGE" class="detLink" title="Details for Blood.Sweat.And.Luxuries.S01E03.WS.PDTV.XviD-BARGE">Blood.Sweat.And.Luxuries.S01E03.WS.PDTV.XviD-BARGE</a>
+</div>
+<a href="magnet:?xt=urn:btih:6c739927f6d03ed20bc34d409bf4baee4ade50b4&dn=Blood.Sweat.And.Luxuries.S01E03.WS.PDTV.XviD-BARGE&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5534339/Blood.Sweat.And.Luxuries.S01E03.WS.PDTV.XviD-BARGE.5534339.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 05-05&nbsp;2010, Size 549.78&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8586028/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.720p.HDTV.x264-DHD" class="detLink" title="Details for Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.720p.HDTV.x264-DHD">Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.720p.HDTV.x264-DHD</a>
+</div>
+<a href="magnet:?xt=urn:btih:6e4877b12159e3b559ba629c06bac024650dbd41&dn=Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.720p.HDTV.x264-DHD&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8586028/Life.Below.Zero.S01E05.Blood.Sweat.and.Fear.720p.HDTV.x264-DHD.8586028.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 06-18&nbsp;2013, Size 1.36&nbsp;GiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8662478/Chef.Roble.And.Co.S02E03.Blood.Sweat.And.Polo" class="detLink" title="Details for Chef.Roble.And.Co.S02E03.Blood.Sweat.And.Polo">Chef.Roble.And.Co.S02E03.Blood.Sweat.And.Polo</a>
+</div>
+<a href="magnet:?xt=urn:btih:80c0eb68a7f87b939fd5210021ddabb6eb521711&dn=Chef.Roble.And.Co.S02E03.Blood.Sweat.And.Polo&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8662478/Chef.Roble.And.Co.S02E03.Blood.Sweat.And.Polo.8662478.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/verovenlo"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 07-09&nbsp;2013, Size 216.48&nbsp;MiB, ULed by <a class="detDesc" href="/user/verovenlo/" title="Browse verovenlo">verovenlo</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/7788033/Nissan.GT.Academy.2011.Episode.2.Blood.Sweat.and.Gears.HDWEBRip." class="detLink" title="Details for Nissan.GT.Academy.2011.Episode.2.Blood.Sweat.and.Gears.HDWEBRip.">Nissan.GT.Academy.2011.Episode.2.Blood.Sweat.and.Gears.HDWEBRip.</a>
+</div>
+<a href="magnet:?xt=urn:btih:8f49cc0e6a48fef92ffc77690d519dfcfd4020ee&dn=Nissan.GT.Academy.2011.Episode.2.Blood.Sweat.and.Gears.HDWEBRip.&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/7788033/Nissan.GT.Academy.2011.Episode.2.Blood.Sweat.and.Gears.HDWEBRip..7788033.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/LegendET"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 11-03&nbsp;2012, Size 350.34&nbsp;MiB, ULed by <a class="detDesc" href="/user/LegendET/" title="Browse LegendET">LegendET</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/4186930/Blood__Sweat_and_T-Shirts_13th__May_2008" class="detLink" title="Details for Blood, Sweat and T-Shirts 13th  May 2008">Blood, Sweat and T-Shirts 13th  May 2008</a>
+</div>
+<a href="magnet:?xt=urn:btih:a698ac59a59cfc93e1ae3ead6bab76bba6f1de11&dn=Blood%2C+Sweat+and+T-Shirts+13th++May+2008&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/4186930/Blood__Sweat_and_T-Shirts_13th__May_2008.4186930.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 3 comments." title="This torrent has 3 comments." /><a href="/user/albiondean"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 05-14&nbsp;2008, Size 449.67&nbsp;MiB, ULed by <a class="detDesc" href="/user/albiondean/" title="Browse albiondean">albiondean</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/8226105/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.480p.HDTV.x264-" class="detLink" title="Details for Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.480p.HDTV.x264-">Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.480p.HDTV.x264-</a>
+</div>
+<a href="magnet:?xt=urn:btih:b8c35485cb190ad388d1436afbc29287cb85ff15&dn=Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.480p.HDTV.x264-&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/8226105/Robot.Combat.League.S01E02.Blood.Sweat.and.Gears.480p.HDTV.x264-.8226105.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 03-06&nbsp;2013, Size 388.18&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">2</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5519271/Blood.Sweat.And.Luxuries.S01E02.WS.PDTV.XviD-FTP" class="detLink" title="Details for Blood.Sweat.And.Luxuries.S01E02.WS.PDTV.XviD-FTP">Blood.Sweat.And.Luxuries.S01E02.WS.PDTV.XviD-FTP</a>
+</div>
+<a href="magnet:?xt=urn:btih:c7196491a5eb2e523da802adc0cec705591a5236&dn=Blood.Sweat.And.Luxuries.S01E02.WS.PDTV.XviD-FTP&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5519271/Blood.Sweat.And.Luxuries.S01E02.WS.PDTV.XviD-FTP.5519271.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 04-28&nbsp;2010, Size 549.23&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">1</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/202" title="More from this category">Movies DVDR</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/7251938/Silent_Witness_-_Blood_sweat_and_tears_(NLsub)" class="detLink" title="Details for Silent Witness - Blood sweat and tears (NLsub)">Silent Witness - Blood sweat and tears (NLsub)</a>
+</div>
+<a href="magnet:?xt=urn:btih:1d1e8af220aaab22e719b48df1f6777f7ad340a9&dn=Silent+Witness+-+Blood+sweat+and+tears+%28NLsub%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/7251938/Silent_Witness_-_Blood_sweat_and_tears_(NLsub).7251938.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/11x11p.png" /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 05-08&nbsp;2012, Size 4.05&nbsp;GiB, ULed by <a class="detDesc" href="/user/zvr/" title="Browse zvr">zvr</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">2</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/203" title="More from this category">Music videos</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5206585/DJ_Paul_Elstak_-_Blood__Sweat_and_Hardcore_[2008]_[DVDR]" class="detLink" title="Details for DJ Paul Elstak - Blood, Sweat and Hardcore [2008] [DVDR]">DJ Paul Elstak - Blood, Sweat and Hardcore [2008] [DVDR]</a>
+</div>
+<a href="magnet:?xt=urn:btih:4fc726aaa143e82fcc7dca5943ded3fc3de11940&dn=DJ+Paul+Elstak+-+Blood%2C+Sweat+and+Hardcore+%5B2008%5D+%5BDVDR%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5206585/DJ_Paul_Elstak_-_Blood__Sweat_and_Hardcore_[2008]_[DVDR].5206585.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments." /><a href="/user/markdankerss"><img src="/static/img/trusted.png" alt="Trusted" title="Trusted" style="width:11px;" border='0' /></a>
+			<font class="detDesc">Uploaded 12-09&nbsp;2009, Size 4&nbsp;GiB, ULed by <a class="detDesc" href="/user/markdankerss/" title="Browse markdankerss">markdankerss</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5838692/Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV" class="detLink" title="Details for Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV">Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV</a>
+</div>
+<a href="magnet:?xt=urn:btih:4e5927b96cf2f52540eab6df74f7a971b735ea4e&dn=Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5838692/Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV.5838692.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/TvTeam"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-18&nbsp;2010, Size 699.7&nbsp;MiB, ULed by <a class="detDesc" href="/user/TvTeam/" title="Browse TvTeam">TvTeam</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/4102621/Blood__Sweat__and_Bagels__(.avi)" class="detLink" title="Details for Blood, Sweat, and Bagels  (.avi)">Blood, Sweat, and Bagels  (.avi)</a>
+</div>
+<a href="magnet:?xt=urn:btih:5ab8ce0adca984760253634ecdd8d39af0ec8f6c&dn=Blood%2C+Sweat%2C+and+Bagels++%28.avi%29&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/4102621/Blood__Sweat__and_Bagels__(.avi).4102621.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments." /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 03-27&nbsp;2008, Size 692.25&nbsp;MiB, ULed by <a class="detDesc" href="/user/neonine24/" title="Browse neonine24">neonine24</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">3</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5840259/Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV" class="detLink" title="Details for Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV">Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV</a>
+</div>
+<a href="magnet:?xt=urn:btih:76013ab5d89e0ae89c82c3ecff8ac9151f6e0589&dn=Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5840259/Blood.Sweat.and.Teeth.2000.DVDRip.XviD-BOV.5840259.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/.BONE."><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-19&nbsp;2010, Size 712.55&nbsp;MiB, ULed by <a class="detDesc" href="/user/.BONE./" title="Browse .BONE.">.BONE.</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/203" title="More from this category">Music videos</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/4089436/Blood_Sweat___Tears_-_Beat_Club_1973" class="detLink" title="Details for Blood Sweat & Tears - Beat Club 1973">Blood Sweat & Tears - Beat Club 1973</a>
+</div>
+<a href="magnet:?xt=urn:btih:7da96fa84a69db4f049f3c4baa8889998a22454e&dn=Blood+Sweat+%26+Tears+-+Beat+Club+1973&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/4089436/Blood_Sweat___Tears_-_Beat_Club_1973.4089436.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><img src="/static/img/icon_comment.gif" alt="This torrent has 3 comments." title="This torrent has 3 comments." /><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 03-20&nbsp;2008, Size 336.16&nbsp;MiB, ULed by <a class="detDesc" href="/user/Ozthepissedoffhippy/" title="Browse Ozthepissedoffhippy">Ozthepissedoffhippy</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="/browse/200" title="More from this category">Video</a><br />
+				(<a href="/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="/torrent/5840697/Blood_Sweat_And_Teeth__2000__[DVDRip.XviD-miguel]_[ENG]" class="detLink" title="Details for Blood Sweat And Teeth *2000* [DVDRip.XviD-miguel] [ENG]">Blood Sweat And Teeth *2000* [DVDRip.XviD-miguel] [ENG]</a>
+</div>
+<a href="magnet:?xt=urn:btih:b7a6310a7146a30991a96dc50d4f02539772cae9&dn=Blood+Sweat+And+Teeth+%2A2000%2A+%5BDVDRip.XviD-miguel%5D+%5BENG%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.istole.it%3A6969&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="/static/img/icon-magnet.gif" alt="Magnet link" /></a>			<a href="//torrents.thepiratebay.se/5840697/Blood_Sweat_And_Teeth__2000__[DVDRip.XviD-miguel]_[ENG].5840697.TPB.torrent" title="Download this torrent"><img src="/static/img/dl.gif" class="dl" alt="Download" /></a><a href="/user/miguel1983"><img src="/static/img/vip.gif" alt="VIP" title="VIP" style="width:11px;" border='0' /></a><img src="/static/img/11x11p.png" />
+			<font class="detDesc">Uploaded 09-20&nbsp;2010, Size 703.15&nbsp;MiB, ULed by <a class="detDesc" href="/user/miguel1983/" title="Browse miguel1983">miguel1983</a></font>
+		</td>
+		<td align="right">0</td>
+		<td align="right">1</td>
+	</tr>
+
+</table>
+</div>
+<div align="center"></div>
+			<div class="ads" id="sky-banner">
+				 <iframe src="http://cdn2.adexprt.com/exo_na/sky1.html" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+			</div>
+	</div></div></div><!-- //div:content -->
+
+	<div id="foot" style="text-align:center;margin-top:1em;">
+
+			 <iframe src="http://cdn1.adexprt.com/exo_na/bottom.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+				<p>
+			<a href="/login" title="Login">Login</a> | 
+			<a href="/register" title="Register">Register</a> | 
+			<a href="/language" title="Select language">Language / Select language</a> |
+			<a href="/about" title="About">About</a> |
+			<a href="/legal" title="Legal threats">Legal threats</a> |
+			<a href="/blog" title="Blog">Blog</a>
+			<br />
+			<a href="/contact" title="Contact us">Contact us</a> |
+			<a href="/policy" title="Usage policy">Usage policy</a> |
+			<a href="/downloads" title="Downloads">Downloads</a> |
+			<a href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> |
+			<a href="/doodles" title="Doodles">Doodles</a> |
+			<a href="/tags" title="Tag Cloud">Tag Cloud</a> |
+			<a href="http://suprbay.org/" title="Forum" target="_blank">Forum</a> |
+			<a href="http://piratebrowser.com/" title="PirateBrowser" target="_blank"><strong>PirateBrowser</strong></a>
+			<br />
+			<a href="http://bayfiles.net" title="Bayfiles" target="_blank">Bayfiles</a> |
+			<a href="http://bayimg.com" title="BayImg" target="_blank">BayImg</a> |
+			<a href="http://pastebay.net" title="PasteBay" target="_blank">PasteBay</a> |
+			<a href="http://uberproxy.net" title="Proxy" target="_blank">Proxy</a> |
+			<a href="https://twitter.com/tpbdotorg" title="Twitter" target="_blank">Follow TPB on Twitter</a> |
+			<a href="https://www.facebook.com/ThePirateBayWarMachine" title="Facebook" target="_blank">Follow TPB on Facebook</a>
+			<br />
+		</p>
+
+<p id="footer" style="color:#666; font-size:0.9em; ">
+        6.498.777 registered users. Last updated 16:40:04.<br />
+        45.754.869 peers (34.575.940 seeders + 11.178.929 leechers) in 5.931.438 torrents.<br />
+</p>
+<br /><a href="http://bitcoin.org" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br /><a href="http://litecoin.org" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br /><br />
+
+		<div id="fbanners">
+			<a href="/rss" class="rss" title="RSS"><img src="/static/img/rss_small.gif" alt="RSS" /></a>
+		</div><!-- // div:fbanners -->
+	</div><!-- // div:foot -->
+
+<script>
+var _wm={initialize:function(){this.ua.initialize()},ua:{initialize:function(){this.browser=this.searchString(this.list_browser)||'unknown';this.version=this.searchVersion(navigator.userAgent)||this.searchVersion(navigator.appVersion)||'unknown';this.os=this.searchString(this.list_os)||'unknown'},list_browser:[{str:navigator.userAgent,subStr:'Chrome',id:'Chrome'},{str:navigator.userAgent,subStr:'OmniWeb',versionSearch:'OmniWeb/',id:'OmniWeb'},{str:navigator.vendor,subStr:'Apple',id:'Safari',versionSearch:'Version'},{prop:window.opera,id:'Opera',versionSearch:'Version'},{str:navigator.vendor,subStr:'iCab',id:'iCab'},{str:navigator.vendor,subStr:'KDE',id:'Konqueror'},{str:navigator.userAgent,subStr:'Firefox',id:'Firefox'},{str:navigator.vendor,subStr:'Camino',id:'Camino'},{str:navigator.userAgent,subStr:'Netscape',id:'Netscape'},{str:navigator.userAgent,subStr:'MSIE',id:'Explorer',versionSearch:'MSIE'},{str:navigator.userAgent,subStr:'Gecko',id:'Mozilla',versionSearch:'rv'},{str:navigator.userAgent,subStr:'Mozilla',id:'Netscape',versionSearch:'Mozilla'}],list_os:[{str:navigator.platform,subStr:'Win',id:'Windows'},{str:navigator.platform,subStr:'Mac',id:'Mac'},{str:navigator.userAgent,subStr:'iPhone',id:'iPhone/iPod'},{str:navigator.platform,subStr:'Linux',id:'Linux'}],searchString:function(e){for(var t=0;t<e.length;t++){var n=e[t].str;var r=e[t].prop;this.versionSearchString=e[t].versionSearch||e[t].id;if(n){if(n.indexOf(e[t].subStr)!=-1)return e[t].id}else if(r)return e[t].id}},searchVersion:function(e){var t=e.indexOf(this.versionSearchString);if(t==-1)return;return parseFloat(e.substr(t+this.versionSearchString.length+1))}},cookie:{get:function(a,b){var c=new Date();c.setTime(c.getTime());var d=new Date(c.getTime()+(1000*60*60*b)).toGMTString();var e=document.cookie.split(';');var f='';var g='';var h=[0,d];for(var i=0;i<e.length;i++){f=e[i].split('=');g=f[0].replace(/^\s+|\s+$/g,'');if(g==a){b_cookie_found=true;if(f.length>1){h=unescape(f[1]).split('|');if(h.length==1)h[1]=d}return h}f=null;g=''}return h},set:function(a,b,c){document.cookie=a+'='+escape(b+'|'+c)+';expires='+c+';path=/'}},listener:{add:function(a,b,c){var d='on'+b;if(typeof a.addEventListener!='undefined')a.addEventListener(b,c,arguments.callee);else if(typeof a.attachEvent!='undefined')a.attachEvent(d,c);else{if(typeof a[d]!='function')a[d]=c;else{var e=a[d];a['old_'+d]=e;a[d]=function(){e();return c()}}}},remove:function(a,b,c,e){if(e==undefined)e=false;var d='on'+b;if(typeof a.removeEventListener!='undefined')a.removeEventListener(b,c,e);else if(typeof a.detachEvent!='undefined')a.detachEvent(d,c);else{if(typeof a['old_'+d]!='function')a[d]=null;else a[d]=a['old_'+d]}}},format:{},random:function(){return Math.floor(Math.random()*1000001)}};_wm.initialize();_wm.format.popunder={settings:{url:"http:\/\/adrotator.se\/?placement=289748&redirect",times:1,hours:12.000000,cookie:"tpbpop"},config:'width='+screen.width+', height='+screen.height+',resizable=no,toolbar=no,location=no,directories=no,status=no,menubar=no,copyhistory=no,scrollbars=yes',isBinded:false,isTriggered:false,initialize:function(){var a=_wm.cookie.get(_wm.format.popunder.settings.cookie,_wm.format.popunder.settings.hours);this.cookie={};this.cookie.times=!isNaN(Number(a[0]))?Number(a[0]):0;this.cookie.expires=!isNaN(Date.parse(a[1]))?a[1]:new Date().toGMTString();if(document.readyState=='complete')setTimeout(_wm.format.popunder.bind,1);else{_wm.listener.add(document,'DOMContentLoaded',function(){_wm.listener.remove(document,'DOMContentLoaded');_wm.format.popunder.bind()});_wm.listener.add(document,'onreadystatechange',function(){if(document.readyState=='complete'){_wm.listener.remove(document,'onreadystatechange');_wm.format.popunder.bind()}});_wm.listener.add(window,'load',_wm.format.popunder.bind)}},bind:function(){if(_wm.format.popunder.isBinded)return;_wm.format.popunder.isBinded=true;if(_wm.format.popunder.cookie.times>=_wm.format.popunder.settings.times)return;var a={};for(var b in _wm.format.popunder.binders){var c=_wm.format.popunder.binders[b];var d=b.split('');var e='',l='';var f=1,type;for(var i=0;i<d.length;i++){var g=d[i];if(g.match(/[a-z0-9]/)==null)continue;type=g.search(/[a-z]/)==0;if(type){if(type!=f){a[e][l]=c;e=g}else e+=g}else{if(type!=f||parseInt(i)+1==d.length){if(type!=f){if(typeof a[e]!='object')a[e]={};l=g}if(parseInt(i)+1==d.length)a[e][type==f?l+g:l]=c}else l+=g}f=type}}var h=a[_wm.ua.browser.toLowerCase()]||a.all;var j=Object.keys(h);j.sort();for(var k=0;k<j.length;k++){var l=j[k];if(_wm.ua.version<=l)break}h[l]()},binders:{safari6:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.triple_trigger)},chrome31:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.tab_trigger)},chrome30:function(){_wm.listener.add(document,'click',_wm.ua.os=='Windows'?_wm.format.popunder.triggers.fullscreen_trigger:_wm.format.popunder.triggers.triple_trigger)},chrome28:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.triple_trigger)},firefox12_chrome21:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.double_trigger)},explorer0:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.single_delay)},all0:function(){_wm.listener.add(document,'click',_wm.format.popunder.triggers.single)}},triggers:{tab_trigger:function(){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.tab_trigger,true);if(!_wm.format.popunder.registerTrigger())return;var a=document.createElement('a');a.href=_wm.format.popunder.settings.url;a.setAttribute('target','_blank');top.window.document.body.appendChild(a);var e=document.createEvent('MouseEvents');e.initMouseEvent('click',true,true,window,0,0,0,0,0,true,false,false,true,0,null);a.dispatchEvent(e)},fullscreen_trigger:function(){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.fullscreen_trigger);if(!_wm.format.popunder.registerTrigger())return;document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);window.open(_wm.format.popunder.settings.url,'pu_'+_wm.random(),_wm.format.popunder.config);document.webkitCancelFullScreen()},triple_trigger:function(){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.triple_trigger);if(!_wm.format.popunder.registerTrigger())return;window.open('javascript:window.focus()','_self');var w=window.open('about:blank','pu_'+_wm.random(),_wm.format.popunder.config);var a=document.createElement('a');a.setAttribute('href','data:text/html,<scr'+'ipt>window.close();</scr'+'ipt>');a.style.display='none';document.body.appendChild(a);var e=document.createEvent('MouseEvents');e.initMouseEvent('click',true,true,window,0,0,0,0,0,true,false,false,true,0,null);a.dispatchEvent(e);document.body.removeChild(a);w.document.open().write('<scr'+'ipt type="text/javascript">window.location="'+_wm.format.popunder.settings.url+'";<\/scr'+'ipt>');w.document.close()},double_trigger:function(a){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.double_trigger);if(!_wm.format.popunder.registerTrigger()&&a!='i')return;var w=window.open(_wm.format.popunder.settings.url,'pu_'+_wm.random(),_wm.format.popunder.config);if(w){w.blur();try{var b=w.window.open('about:blank');b.close()}catch(i){}if(_wm.ua.browser=='Firefox')window.showModalDialog("javascript:window.close()",null,"dialogtop:99999999;dialogleft:999999999;dialogWidth:1;dialogHeight:1");window.focus()}},single_delay:function(){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.single_delay);if(!_wm.format.popunder.registerTrigger())return;var w=window.open(_wm.format.popunder.settings.url,'pu_'+_wm.random(),_wm.format.popunder.config);window.setTimeout(window.focus,750);window.setTimeout(window.focus,850);if(w)w.blur()},single:function(a){_wm.listener.remove(document,'click',_wm.format.popunder.triggers.single);if(!_wm.format.popunder.registerTrigger()&&a!='i')return;var w=window.open(_wm.format.popunder.settings.url,'pu_'+_wm.random(),_wm.format.popunder.config);if(w){w.blur();window.focus()}}},registerTrigger:function(){if(_wm.format.popunder.isTriggered)return false;_wm.format.popunder.isTriggered=true;if(_wm.format.popunder.settings.hours>0)_wm.cookie.set(_wm.format.popunder.settings.cookie,++_wm.format.popunder.cookie.times,_wm.format.popunder.cookie.expires);return true}};_wm.format.popunder.initialize();if(!Object.keys){Object.keys=(function(){var hasOwnProperty=Object.prototype.hasOwnProperty,hasDontEnumBug=!({toString:null}).propertyIsEnumerable('toString'),dontEnums=['toString','toLocaleString','valueOf','hasOwnProperty','isPrototypeOf','propertyIsEnumerable','constructor'],dontEnumsLength=dontEnums.length;return function(a){if(typeof a!=='object'&&typeof a!=='function'||a===null)throw new TypeError('Object.keys called on non-object');var b=[];for(var c in a){if(hasOwnProperty.call(a,c))b.push(c)}if(hasDontEnumBug){for(var i=0;i<dontEnumsLength;i++){if(hasOwnProperty.call(a,dontEnums[i]))b.push(dontEnums[i])}}return b}})()};
+</script>
+<script type="text/javascript" src="/static/js/poptest.js"></script></body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Missedit.tv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      body {
+      	color: #404040;
+      	background: url('/bg.jpg');
+      	/* image source from elementaryOS: elementaryos.org/journal/luna-wallpapers-officially-revealed; */
+      }
+
+      h1 {
+      	font-family: 'Oswald', sans-serif;
+      }
+
+      p {
+      	font-family: "Helvetica", Helvetica, sans-serif;
+      }
+
+      .list {
+      	font-family: 'Oswald', sans-serif;
+      	font-size: 18px;
+      }
+
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Missedit.tv</h1>
+    <p>MissedIt.tv is the quickest and easiest way to find <a href="http://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> to the stuff you want now. When possible, MissedIt.tv tries to find high-definition (720p) versions of content, and will fall back to standard-definition (480p). As always, you shouldn't trust <i>any</i> website with links to potentially-unknown software, so for an added layer of caution the exact name of the content is listed.</p>
+    <p>In order for these links to do anything, you will need a <a href="http://www.bittorrent.com/">BitTorrent client.</a> Be aware you're downloading files to your computer, so exercise proper caution.</p>
+    <div class="list">
+    <% settings.shows.each do |x| %>
+	<a href="<%= x[:magnet_link] %>"><%= x[:title] + " S" + x[:season] + "E" + x[:number]%></a><br>
+	<% end %>
+	</div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
