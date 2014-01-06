@@ -18,45 +18,47 @@ def getTorrents (showList)
   # our torrent object
   t = TorrentApi.new	
   foundAry = Array.new
-  showList[0]["episodes"].each_with_index do |item, index|
-    puts index
-    puts showList[0]["episodes"][index]["show"]["title"]
-    title = showList[0]["episodes"][index]["show"]["title"]
-    season = sprintf '%02d', showList[0]["episodes"][index]["episode"]["season"]
-    number = sprintf '%02d', showList[0]["episodes"][index]["episode"]["number"]
-    t.search_term = title + " s" + season + "e" + number + " 720p"
-    r = Array.new
-    if title != ""
-    r = t.search
-    end
-    unless r == []
-      checkString = "S" + season + "E" + number
-      if r[0].name.include? checkString
-        # if we make it here, we know there's a link
-        # so we can add both the title and the link to our json or array or w/e
-        magnet_link = URI.escape(r[0].magnet_link)
-        size = r[0].size
-        name = r[0].name
-        puts magnet_link
-        showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
-        foundAry.push(showInfo)
-      end
-    else
-      t.search_term = title + " s" + season + "e" + number + " 480p"
+  if (showList != [])
+    showList[0]["episodes"].each_with_index do |item, index|
+      puts index
+      puts showList[0]["episodes"][index]["show"]["title"]
+      title = showList[0]["episodes"][index]["show"]["title"]
+      season = sprintf '%02d', showList[0]["episodes"][index]["episode"]["season"]
+      number = sprintf '%02d', showList[0]["episodes"][index]["episode"]["number"]
+      t.search_term = title + " s" + season + "e" + number + " 720p"
       r = Array.new
       if title != ""
       r = t.search
-        unless r == []
-          checkString = "S" + season + "E" + number
-          if r[0].name.include? checkString
-            # if we make it here, we know there's a link
-            # so we can add both the title and the link to our json or array or w/e
-            magnet_link = URI.escape(r[0].magnet_link)
-            size = r[0].size
-            name = r[0].name
-            puts magnet_link
-            showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
-            foundAry.push(showInfo)
+      end
+      unless r == []
+        checkString = "S" + season + "E" + number
+        if r[0].name.include? checkString
+          # if we make it here, we know there's a link
+          # so we can add both the title and the link to our json or array or w/e
+          magnet_link = URI.escape(r[0].magnet_link)
+          size = r[0].size
+          name = r[0].name
+          puts magnet_link
+          showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
+          foundAry.push(showInfo)
+        end
+      else
+        t.search_term = title + " s" + season + "e" + number + " 480p"
+        r = Array.new
+        if title != ""
+        r = t.search
+          unless r == []
+            checkString = "S" + season + "E" + number
+            if r[0].name.include? checkString
+              # if we make it here, we know there's a link
+              # so we can add both the title and the link to our json or array or w/e
+              magnet_link = URI.escape(r[0].magnet_link)
+              size = r[0].size
+              name = r[0].name
+              puts magnet_link
+              showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
+              foundAry.push(showInfo)
+            end
           end
         end
       end
@@ -71,25 +73,26 @@ configure do
   shows = Array.new
   #showList = getShows
   #shows = getTorrents(showList) 
+  showList = Array.new
   set :showList, showList
   set :shows, shows
-  set :torrentLastUpdated, 0
-  set :showListLastUpdated, 0
+  set :torrentLastUpdated, Time.now - 24*60*60
+  set :showListLastUpdated, Time.now - 24*60*60
 end
 
 after do
-  if Time.now - settings.torrentLastUpdated > 5 * 60
-    settings.torrentLastUpdated = Time.now
-    puts "Updating Torrents"
-    newShows = getTorrents(settings.showList)
-    settings.shows = newShows
-  end
-
   if Time.now - settings.showListLastUpdated > 60 * 60
     settings.showListLastUpdated = Time.now
     puts "Updating Show List"
     newList = getShows
     settings.showList = newList
+  end
+
+  if Time.now - settings.torrentLastUpdated > 5 * 60
+    settings.torrentLastUpdated = Time.now
+    puts "Updating Torrents"
+    newShows = getTorrents(settings.showList)
+    settings.shows = newShows
   end
 end
 
