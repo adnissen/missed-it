@@ -44,17 +44,8 @@
   <body>
   <div class="container">
     <h1>Missedit.tv</h1>
-    <h2>The Shows of Yesterday, Today</h2>
-    <p>MissedIt.tv is the quickest and easiest way to find <a href="http://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> to the stuff you missed yesterday but want to watch now. Missedit.tv will only display links to television in high-definition (720p), because that's really the only way to watch TV. As always, you shouldn't trust <i>any</i> website with links to potentially-unknown software, so exercise proper caution.</p>
-    <p>In order for these links to do anything, you will need a <a href="http://www.bittorrent.com/">BitTorrent client.</a></p>
-    <div class="list">
-    <% settings.shows.each do |x| %>
-	<a href="<%= x[:magnet_link] %>"><%= x[:title] + " S" + x[:season] + "E" + x[:number]%></a><br>
-	<% end %>
+    <h2>Hmm, looks like there's a lot of traffic right now, or something went wrong! Try refreshing the page in a moment. If that doesn't work, go yell at <a href="http://twitter.com/ambushsabre/">@ambushsabre</a> on twitter.</h2>
 	</div>
-	<br>
-	<br>
-	<small>&copy;Missedit.tv 2014. <a href="http://twitter.com/ambushsabre">@ambushsabre</a>
   </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
