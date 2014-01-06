@@ -69,12 +69,12 @@ configure do
   # the array with all the shows found
   set :erb, :escape_html => true
   shows = Array.new
-  showList = getShows
-  shows = getTorrents(showList) 
+  #showList = getShows
+  #shows = getTorrents(showList) 
   set :showList, showList
   set :shows, shows
-  set :torrentLastUpdated, Time.now
-  set :showListLastUpdated, Time.now
+  set :torrentLastUpdated, 0
+  set :showListLastUpdated, 0
 end
 
 after do
