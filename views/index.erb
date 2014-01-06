@@ -32,6 +32,10 @@
       	font-family: 'Oswald', sans-serif;
       }
 
+      h3 {
+      	font-family: 'Oswald', sans-serif;
+      }
+
       p {
       	font-family: "Helvetica", Helvetica, sans-serif;
       }
@@ -49,6 +53,9 @@
     <h2>The Shows of Yesterday, Today</h2>
     <p>MissedIt.tv is the quickest and easiest way to find <a href="http://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> to the stuff you missed yesterday but want to watch now. Missedit.tv will only display links to television in high-definition (720p), because that's really the only way to watch TV. As always, you shouldn't trust <i>any</i> website with links to potentially-unknown software, so exercise proper caution.</p>
     <p>In order for these links to do anything, you will need a <a href="http://www.bittorrent.com/">BitTorrent client.</a></p>
+
+    <br>
+    <h3>New Episodes in the Last Day:</h3>
     <div class="list">
     <% settings.shows.each do |x| %>
 	<a href="<%= x[:magnet_link] %>"><%= x[:title] + " S" + x[:season] + "E" + x[:number]%></a><br>
