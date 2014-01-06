@@ -42,25 +42,25 @@ def getTorrents (showList)
           showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
           foundAry.push(showInfo)
         end
-      else
-        t.search_term = title + " s" + season + "e" + number + " 480p"
-        r = Array.new
-        if title != ""
-        r = t.search
-          unless r == []
-            checkString = "S" + season + "E" + number
-            if r[0].name.include? checkString
-              # if we make it here, we know there's a link
-              # so we can add both the title and the link to our json or array or w/e
-              magnet_link = URI.escape(r[0].magnet_link)
-              size = r[0].size
-              name = r[0].name
-              puts magnet_link
-              showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
-              foundAry.push(showInfo)
-            end
-          end
-        end
+      # else
+      #   t.search_term = title + " s" + season + "e" + number + " 480p"
+      #   r = Array.new
+      #   if title != ""
+      #   r = t.search
+      #     unless r == []
+      #       checkString = "S" + season + "E" + number
+      #       if r[0].name.include? checkString
+      #         # if we make it here, we know there's a link
+      #         # so we can add both the title and the link to our json or array or w/e
+      #         magnet_link = URI.escape(r[0].magnet_link)
+      #         size = r[0].size
+      #         name = r[0].name
+      #         puts magnet_link
+      #         showInfo = {title: title, name: name, magnet_link: magnet_link, size: size, season: season, number: number}
+      #         foundAry.push(showInfo)
+      #       end
+      #     end
+      #   end
       end
     end
   end
