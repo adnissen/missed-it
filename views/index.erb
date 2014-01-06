@@ -26,6 +26,10 @@
       	font-family: 'Oswald', sans-serif;
       }
 
+      h2 {
+      	font-family: 'Oswald', sans-serif;
+      }
+
       p {
       	font-family: "Helvetica", Helvetica, sans-serif;
       }
@@ -40,8 +44,9 @@
   <body>
   <div class="container">
     <h1>Missedit.tv</h1>
-    <p>MissedIt.tv is the quickest and easiest way to find <a href="http://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> to the stuff you want now. When possible, MissedIt.tv tries to find high-definition (720p) versions of content, and will fall back to standard-definition (480p). As always, you shouldn't trust <i>any</i> website with links to potentially-unknown software, so for an added layer of caution the exact name of the content is listed.</p>
-    <p>In order for these links to do anything, you will need a <a href="http://www.bittorrent.com/">BitTorrent client.</a> Be aware you're downloading files to your computer, so exercise proper caution.</p>
+    <h2>The Shows of Yesterday, Today</h2>
+    <p>MissedIt.tv is the quickest and easiest way to find <a href="http://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> to the stuff you missed yesterday but want to watch now. When possible, Missedit.tv tries to find high-definition (720p) versions of content, and will fall back to standard-definition (480p) if higher qualities are unavailable. As always, you shouldn't trust <i>any</i> website with links to potentially-unknown software, so exercise proper caution.</p>
+    <p>In order for these links to do anything, you will need a <a href="http://www.bittorrent.com/">BitTorrent client.</a></p>
     <div class="list">
     <% settings.shows.each do |x| %>
 	<a href="<%= x[:magnet_link] %>"><%= x[:title] + " S" + x[:season] + "E" + x[:number]%></a><br>
