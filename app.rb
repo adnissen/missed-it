@@ -26,11 +26,12 @@ def getTorrents (showList)
       season = sprintf '%02d', showList[0]["episodes"][index]["episode"]["season"]
       number = sprintf '%02d', showList[0]["episodes"][index]["episode"]["number"]
       t.search_term = title + " s" + season + "e" + number + " 720p"
+      puts t.search_term
       r = Array.new
       if title != ""
-      r = t.search
+        r = t.search
       end
-      unless r == []
+      if r != []
         checkString = "S" + season + "E" + number
         if r[0].name.include? checkString
           # if we make it here, we know there's a link
